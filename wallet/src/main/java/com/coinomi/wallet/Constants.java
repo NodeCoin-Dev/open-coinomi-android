@@ -2,7 +2,7 @@ package com.coinomi.wallet;
 
 import android.text.format.DateUtils;
 
-import com.coinomi.core.coins.AsiacoinMain;
+/*import com.coinomi.core.coins.AsiacoinMain;
 import com.coinomi.core.coins.AuroracoinMain;
 import com.coinomi.core.coins.BatacoinMain;
 import com.coinomi.core.coins.BitcoinMain;
@@ -12,10 +12,10 @@ import com.coinomi.core.coins.BurstMain;
 import com.coinomi.core.coins.CanadaeCoinMain;
 import com.coinomi.core.coins.CannacoinMain;
 import com.coinomi.core.coins.ClamsMain;
-import com.coinomi.core.coins.ClubcoinMain;
+import com.coinomi.core.coins.ClubcoinMain;*/
 import com.coinomi.core.coins.CoinID;
 import com.coinomi.core.coins.CoinType;
-import com.coinomi.core.coins.DashMain;
+/*import com.coinomi.core.coins.DashMain;
 import com.coinomi.core.coins.DigibyteMain;
 import com.coinomi.core.coins.DigitalcoinMain;
 import com.coinomi.core.coins.DogecoinMain;
@@ -24,8 +24,9 @@ import com.coinomi.core.coins.EguldenMain;
 import com.coinomi.core.coins.FeathercoinMain;
 import com.coinomi.core.coins.GcrMain;
 import com.coinomi.core.coins.GuldenMain;
-import com.coinomi.core.coins.JumbucksMain;
-import com.coinomi.core.coins.LitecoinMain;
+import com.coinomi.core.coins.JumbucksMain;*/
+import com.coinomi.core.coins.LightningcashMain;
+/*import com.coinomi.core.coins.LitecoinMain;
 import com.coinomi.core.coins.LitecoinTest;
 import com.coinomi.core.coins.MonacoinMain;
 import com.coinomi.core.coins.NamecoinMain;
@@ -46,7 +47,7 @@ import com.coinomi.core.coins.VergeMain;
 import com.coinomi.core.coins.VertcoinMain;
 import com.coinomi.core.coins.VpncoinMain;
 import com.coinomi.core.coins.RichcoinMain;
-import com.coinomi.core.coins.IxcoinMain;
+import com.coinomi.core.coins.IxcoinMain;*/
 import com.coinomi.core.network.CoinAddress;
 import com.coinomi.stratumj.ServerAddress;
 import com.google.common.collect.ImmutableList;
@@ -121,14 +122,14 @@ public class Constants {
     public static final char CURRENCY_MINUS_SIGN = '-';
 
     public static final String MARKET_APP_URL = "market://details?id=%s";
-    public static final String BINARY_URL = "https://github.com/Coinomi/coinomi-android/releases";
+    public static final String BINARY_URL = "https://github.com/Lightningcash-dev/open-coinomi-android/releases";
 
-    public static final String VERSION_URL = "https://coinomi.com/version";
-    public static final String SUPPORT_EMAIL = "support@coinomi.com";
+    public static final String VERSION_URL = "https://github.com/Lightningcash-dev/open-coinomi-android/releases/tag/v1.0.0";
+    public static final String SUPPORT_EMAIL = "support@lightningcash.gold";
 
     // TODO move to resource files
     public static final List<CoinAddress> DEFAULT_COINS_SERVERS = ImmutableList.of(
-            new CoinAddress(BitcoinMain.get(),      new ServerAddress("btc-cce-1.coinomi.net", 5001),
+/*            new CoinAddress(BitcoinMain.get(),      new ServerAddress("btc-cce-1.coinomi.net", 5001),
                                                     new ServerAddress("btc-cce-2.coinomi.net", 5001)),
             new CoinAddress(BitcoinTest.get(),      new ServerAddress("btc-testnet-cce-1.coinomi.net", 15001),
                                                     new ServerAddress("btc-testnet-cce-2.coinomi.net", 15001)),
@@ -214,14 +215,16 @@ public class Constants {
             new CoinAddress(RichcoinMain.get(),     new ServerAddress("richx-cce-1.coinomi.net", 5046),
                                                     new ServerAddress("richx-cce-2.coinomi.net", 5046)),
             new CoinAddress(IxcoinMain.get(),       new ServerAddress("ixc-cce-1.coinomi.net", 5047),
-                                                    new ServerAddress("ixc-cce-2.coinomi.net", 5047))
+                                                    new ServerAddress("ixc-cce-2.coinomi.net", 5047)),*/
+            new CoinAddress(LightningcashMain.get(),       new ServerAddress("lightningcash.tk", 50001),
+							   new ServerAddress("lightningcash.tk", 50001))
     );
 
     public static final HashMap<CoinType, Integer> COINS_ICONS;
     public static final HashMap<CoinType, String> COINS_BLOCK_EXPLORERS;
     static {
         COINS_ICONS = new HashMap<>();
-        COINS_ICONS.put(CoinID.BITCOIN_MAIN.getCoinType(), R.drawable.bitcoin);
+/*        COINS_ICONS.put(CoinID.BITCOIN_MAIN.getCoinType(), R.drawable.bitcoin);
         COINS_ICONS.put(CoinID.BITCOIN_TEST.getCoinType(), R.drawable.bitcoin_test);
         COINS_ICONS.put(CoinID.DOGECOIN_MAIN.getCoinType(), R.drawable.dogecoin);
         COINS_ICONS.put(CoinID.DOGECOIN_TEST.getCoinType(), R.drawable.dogecoin_test);
@@ -237,7 +240,7 @@ public class Constants {
         COINS_ICONS.put(CoinID.RUBYCOIN_MAIN.getCoinType(), R.drawable.rubycoin);
         COINS_ICONS.put(CoinID.NAMECOIN_MAIN.getCoinType(), R.drawable.namecoin);
         COINS_ICONS.put(CoinID.FEATHERCOIN_MAIN.getCoinType(), R.drawable.feathercoin);
-//        COINS_ICONS.put(CoinID.URO_MAIN.getCoinType(), R.drawable.uro);
+        COINS_ICONS.put(CoinID.URO_MAIN.getCoinType(), R.drawable.uro);
         COINS_ICONS.put(CoinID.DIGITALCOIN_MAIN.getCoinType(), R.drawable.digitalcoin);
         COINS_ICONS.put(CoinID.CANNACOIN_MAIN.getCoinType(), R.drawable.cannacoin);
         COINS_ICONS.put(CoinID.DIGIBYTE_MAIN.getCoinType(), R.drawable.digibyte);
@@ -263,10 +266,11 @@ public class Constants {
         COINS_ICONS.put(CoinID.EGULDEN_MAIN.getCoinType(), R.drawable.egulden);
         COINS_ICONS.put(CoinID.CLUBCOIN_MAIN.getCoinType(), R.drawable.clubcoin);
         COINS_ICONS.put(CoinID.RICHCOIN_MAIN.getCoinType(), R.drawable.richcoin);
-        COINS_ICONS.put(CoinID.IXCOIN_MAIN.getCoinType(), R.drawable.ixcoin);
+        COINS_ICONS.put(CoinID.IXCOIN_MAIN.getCoinType(), R.drawable.ixcoin);*/
+        COINS_ICONS.put(CoinID.LIGHTNINGCASH_MAIN.getCoinType(), R.drawable.lightningcashgold);
 
         COINS_BLOCK_EXPLORERS = new HashMap<CoinType, String>();
-        COINS_BLOCK_EXPLORERS.put(CoinID.BITCOIN_MAIN.getCoinType(), "https://blockchain.info/tx/%s");
+/*        COINS_BLOCK_EXPLORERS.put(CoinID.BITCOIN_MAIN.getCoinType(), "https://blockchain.info/tx/%s");
         COINS_BLOCK_EXPLORERS.put(CoinID.BITCOIN_TEST.getCoinType(), "https://chain.so/tx/BTCTEST/%s");
         COINS_BLOCK_EXPLORERS.put(CoinID.DOGECOIN_MAIN.getCoinType(), "https://chain.so/tx/DOGE/%s");
         COINS_BLOCK_EXPLORERS.put(CoinID.DOGECOIN_TEST.getCoinType(), "https://chain.so/tx/DOGETEST/%s");
@@ -282,7 +286,7 @@ public class Constants {
         COINS_BLOCK_EXPLORERS.put(CoinID.RUBYCOIN_MAIN.getCoinType(), "https://chainz.cryptoid.info/rby/tx.dws?%s");
         COINS_BLOCK_EXPLORERS.put(CoinID.NAMECOIN_MAIN.getCoinType(), "https://explorer.namecoin.info/tx/%s");
         COINS_BLOCK_EXPLORERS.put(CoinID.FEATHERCOIN_MAIN.getCoinType(), "http://explorer.feathercoin.com/tx/%s");
-//        COINS_BLOCK_EXPLORERS.put(CoinID.URO_MAIN.getCoinType(), "https://chainz.cryptoid.info/uro/tx.dws?%s");
+        COINS_BLOCK_EXPLORERS.put(CoinID.URO_MAIN.getCoinType(), "https://chainz.cryptoid.info/uro/tx.dws?%s");
         COINS_BLOCK_EXPLORERS.put(CoinID.DIGITALCOIN_MAIN.getCoinType(), "https://chainz.cryptoid.info/dgc/tx.dws?%s");
         COINS_BLOCK_EXPLORERS.put(CoinID.CANNACOIN_MAIN.getCoinType(), "https://chainz.cryptoid.info/ccn/tx.dws?%s");
         COINS_BLOCK_EXPLORERS.put(CoinID.DIGIBYTE_MAIN.getCoinType(), "https://digiexplorer.info/tx/%s");
@@ -305,24 +309,25 @@ public class Constants {
         COINS_BLOCK_EXPLORERS.put(CoinID.ASIACOIN_MAIN.getCoinType(), "https://chainz.cryptoid.info/ac/tx.dws?%s.htm");
         COINS_BLOCK_EXPLORERS.put(CoinID.EGULDEN_MAIN.getCoinType(), "https://chainz.cryptoid.info/efl/tx.dws?%s");
         COINS_BLOCK_EXPLORERS.put(CoinID.RICHCOIN_MAIN.getCoinType(), "https://explorer.richcoin.us/transaction?transaction=%s");
-        COINS_BLOCK_EXPLORERS.put(CoinID.IXCOIN_MAIN.getCoinType(), "https://chainz.cryptoid.info/ixc/tx.dws?%s");
+        COINS_BLOCK_EXPLORERS.put(CoinID.IXCOIN_MAIN.getCoinType(), "https://chainz.cryptoid.info/ixc/tx.dws?%s");*/
+        COINS_BLOCK_EXPLORERS.put(CoinID.LIGHTNINGCASH_MAIN.getCoinType(), "http://explorer.lightningcash.tk/tx/%s");
     }
 
-    public static final CoinType DEFAULT_COIN = BitcoinMain.get();
-    public static final List<CoinType> DEFAULT_COINS = ImmutableList.of((CoinType) BitcoinMain.get());
+    public static final CoinType DEFAULT_COIN = LightningcashMain.get();
+    public static final List<CoinType> DEFAULT_COINS = ImmutableList.of((CoinType) LightningcashMain.get());
     public static final ArrayList<String> DEFAULT_TEST_COIN_IDS = Lists.newArrayList(
-            BitcoinTest.get().getId(),
-            LitecoinTest.get().getId(),
-            DogecoinTest.get().getId()
+//            BitcoinTest.get().getId(),
+//            LitecoinTest.get().getId(),
+//            DogecoinTest.get().getId()
     );
 
     public static final List<CoinType> SUPPORTED_COINS = ImmutableList.of(
-            BitcoinMain.get(),
+/*            BitcoinMain.get(),
             AsiacoinMain.get(),
             AuroracoinMain.get(),
             BatacoinMain.get(),
             BlackcoinMain.get(),
-//            BurstMain.get(),
+            BurstMain.get(),
             CanadaeCoinMain.get(),
             CannacoinMain.get(),
             ClamsMain.get(),
@@ -336,15 +341,16 @@ public class Constants {
             GcrMain.get(),
             GuldenMain.get(),
             IxcoinMain.get(),
-            JumbucksMain.get(),
-            LitecoinMain.get(),
+            JumbucksMain.get(),*/
+            LightningcashMain.get()
+/*            LitecoinMain.get(),
             MonacoinMain.get(),
             NamecoinMain.get(),
             NeoscoinMain.get(),
             NovacoinMain.get(),
             NuBitsMain.get(),
             NuSharesMain.get(),
-//            NxtMain.get(),
+            NxtMain.get(),
             OKCashMain.get(),
             ParkbyteMain.get(),
             PeercoinMain.get(),
@@ -358,6 +364,6 @@ public class Constants {
             VpncoinMain.get(),
             BitcoinTest.get(),
             LitecoinTest.get(),
-            DogecoinTest.get()
+            DogecoinTest.get()*/
     );
 }
